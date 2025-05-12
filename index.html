@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Three-Section Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: 'fantasy';
+      src: local('FantaisieArtistique'),
+        url('FantaisieArtistique.otf') format('opentype');
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'fantasy', Arial, sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .top-section {
+      background-color: #3498db;
+      flex: 1;
+      min-height: 10vh;
+    }
+
+    .middle-section {
+      background-color: rgb(253, 252, 252);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .5rem 0;
+      flex-shrink: 0;
+      position: relative;
+      overflow: visible;
+    }
+
+    .bottom-section {
+      background-color: #2ecc71;
+      flex: 1;
+      min-height: 10vh;
+    }
+
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1200px;
+      width: 100%;
+      gap: 2rem;
+    }
+
+    .text-left,
+    .text-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 300px;
+    }
+
+    .text-left {
+      align-items: center;
+      text-align: center;
+      padding-right: 2rem;
+    }
+
+    .text-right {
+      align-items: center;
+      text-align: center;
+      padding-left: 2rem;
+    }
+
+    .image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 20;
+    }
+
+    .round-image {
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      object-fit: cover;
+      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+      margin: -100px 0;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    .right-top-text {
+      font-size: 1.4rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .right-bottom-text {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .text-left,
+      .text-right {
+        align-items: center;
+        text-align: center;
+        padding: 1rem 0;
+        width: auto;
+      }
+
+      .round-image {
+        width: 300px;
+        height: 300px;
+        margin: 0;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="top-section"></div>
+
+  <div class="middle-section">
+    <div class="content-wrapper">
+      <div class="text-left">
+        <div class="title">Innovictos Lionfist</div>
+        <div class="subtitle">Monk of the Open Hand</div>
+      </div>
+
+      <div class="image-container">
+        <img src="images/iv_shield_512.png" alt="Round Image" class="round-image">
+      </div>
+
+      <div class="text-right">
+        <div class="right-top-text">
+          <p>
+            WoW <a target="_blank"
+              href="https://worldofwarcraft.blizzard.com/en-us/character/us/moon-guard/innovictos">Innovictos
+              of Moon Guard</a>
+            EverQuest <a>Innovictos of Teek</a>Diablo <a>Inno#11880</a>
+          </p>
+        </div>
+        <div class="right-bottom-text">
+          <p>Twitter <a target="_blank" href="https://twitter.com/innovictos">@innovictos</a>
+            Reddit <a target="_blank" href="https://www.reddit.com/u/innovictos">u/Innovictos</a>
+            Steam <a target="_blank" href="https://steamcommunity.com/id/innovictos/">Innovictos</a>XBOX
+            <a>Innovictos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-section"></div>
+</body>
+
+</html>
